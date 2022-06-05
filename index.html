@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="nav">
+    <button class="navbutton selected" id="pomodoroButton">POMODORO</button>
+    <button class="navbutton" id="settingsButton">SETTINGS</button>
+  </div>
+  <div id="pomodoroMain" class="main">
+    <div class="pomodoro" id="pomodoro">
+      <div class="row settings">
+        <img class="cog" src="https://www.seekpng.com/png/full/23-237011_cog-icon-white-png.png" alt="settings" />
+        <div class="counter">Pomodoro nr <span id="pomodoroCounter">1</span></div>
+      </div>
+      <div class="row time">
+        <div class="timer" id="timer">00:00:00</div>
+      </div>
+      <div class="row info">
+        <div class="about">
+          ABOUT:
+          <div contenteditable id="about">Opis zadania</div>
+        </div>
+
+        <div class="category">
+          CATEGORY:
+          <div contenteditable id="category">kategoria</div>
+        </div>
+      </div>
+      <div class="row buttons">
+        <button id="startButton">START</button>
+        <button id="pauseButton">PAUSE</button>
+        <button id="resetButton">RESET</button>
+      </div>
+    </div>
+    <div class="adding">
+      <div class="row">
+        <input id="inputAbout" class="input" type="text" placeholder="new todo list.." />
+        <input id="inputCategory" class="input" type="text" />
+        <button id="addButton">Add</button>
+      </div>
+      <div class="row category">
+        kategoria
+        <select id="select">
+        </select>
+        <button id="clearList">clear list</button>
+      </div>
+
+    </div>
+    <div class="pomodorotodolisthistory" id="todoListHistory">
+      <h4>POMODORO TODO LIST HISTORY</h4>
+    </div>
+  </div>
+  <div id="settingsMain" class="main hidden">
+    <div class="settingsName">POMODORO TIMER SETTINGS</div>
+    <div class="settingsContainer">
+      <div class="row autosettings">
+        <div>Auto breaks:</div>
+        <label class="switch">
+          <input type="checkbox" id="autoBreak"/>
+          <span class="slider round"></span>
+        </label>
+        <div>Auto pomodoros:</div>
+        <label class="switch">
+          <input type="checkbox" id="autoPomodoro"/>
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div id="settings">
+        <div class="row">
+          <div class="settingLabel">Duration:</div>
+          <input type="number" id="durationInput" min="1" max="999" />
+        </div>
+        <div class="row">
+          <div class="settingLabel">Short break:</div>
+          <input type="number" id="sBreakInput" min="1" max="999" />
+        </div>
+        <div class="row">
+          <div class="settingLabel">Long break:</div>
+          <input type="number" id="lBreakInput" min="1" max="999" />
+        </div>
+        <div class="row">
+          <div class="settingLabel">After:</div>
+          <input type="number" id="lbDelayInput" min="1" max="99" />
+        </div>
+        <div class="row">
+          <div class="settingLabel">Daily goal:</div>
+          <input type="number" id="goalInput" min="1" max="99" />
+        </div>
+      </div>
+      <div class="row scenarios">
+        <button id="optionOne">Option One</button>
+        <button id="optionTwo">Option Two</button>
+        <button id="optionThree">Option Three</button>
+      </div>
+      <div class="row lastrow">
+        <input type="text" name="settingsSummary" id="settingsSummary"
+          pattern="[0-9]{1,3}-[0-9]{1,3}-[0-9]{1,3}-[0-9]{1,2}-[0-9]{1,2}" />
+        <button id="applyButton">Apply</button>
+      </div>
+    </div>
+    <div class="settingsName">Notification settings</div>
+    <div class="settingsContainer notiSettings">
+      <div class="row">Alarm sound <input type="file" id="alarmSound" /></div>
+      <div class="row">
+        Alarm volume <input type="range" id="alarmVolume" min="0" max="100" />
+      </div>
+    </div>
+    <div class="settingsName">Application settings</div>
+    <div class="settingsContainer appSettings">
+      <div class="row colorPicker">
+        <div class="colorPicker">
+          Main color:
+          <input type="color" name="mainColor" id="mainColor" /> Settings
+          color: <input type="color" name="settsColor" id="settsColor" />
+        </div>
+      </div>
+      <div class="row">
+        <label class="switch">
+          <input type="checkbox" id="modeInput" />
+          <span class="slider round"></span>
+        </label>
+        <p id="pMode">Light</p>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  <script src="settings.js"></script>
+</body>
+
+</html>

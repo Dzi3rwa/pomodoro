@@ -1,0 +1,1 @@
+W przypadku zmiany dzwonka, plik z nowym dzwiekiem musi znajdowac się w katologu z projektem.
